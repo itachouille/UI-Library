@@ -1,14 +1,11 @@
-import DashboardSidebar from "@/components/DashboardSidebar"
-import MaxWidthWrapper from "@/components/MaxWidthWrapper"
 import Navbar from "@/components/Navbar"
+import { AppSidebar } from "@/components/sidebar/app-sidebar"
 
 export default function Home() {
   return (
     <main className="w-full">
-      <MaxWidthWrapper>
-        <Navbar />
-        <DashboardSidebar />
-      </MaxWidthWrapper>
+      <Navbar />
+      <AppSidebar />
     </main>
   )
 }
