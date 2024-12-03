@@ -1,5 +1,4 @@
 import { ChevronDown } from "lucide-react"
-
 import {
   Collapsible,
   CollapsibleContent,
@@ -15,6 +14,7 @@ import {
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
 import SvgIcon from "../svg-icon"
+import { Separator } from "../ui/separator"
 
 export function NavMain({
   items,
@@ -43,7 +43,7 @@ export function NavMain({
           >
             <SidebarMenuItem>
               <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title}>
+                <SidebarMenuButton tooltip={item.title} className="h-5">
                   {item.icon && <SvgIcon src={item.icon} alt={item.title} />}
                   <span>{item.title}</span>
                   <ChevronDown className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180 text-primaryGray" />
@@ -65,6 +65,7 @@ export function NavMain({
                   ))}
                 </SidebarMenuSub>
               </CollapsibleContent>
+              <Separator className="bg-cardStroke" />
             </SidebarMenuItem>
           </Collapsible>
         ))}
