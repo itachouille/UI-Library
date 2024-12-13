@@ -79,4 +79,12 @@ body {
   .flex-center {
     @apply flex items-center justify-center;
   }
+
+  .blur-orange-effect-outside {
+    @apply before:absolute before:-top-4 before:left-1/2 before:-z-10 before:h-10 before:w-full before:-translate-x-1/2 before:transform before:bg-orange-500 before:opacity-50 before:blur-2xl before:content-[''];
+  }
+
+  .image-gradient-effect {
+    @apply after:absolute after:inset-0 after:z-30 after:bg-gradient-to-b after:from-transparent after:via-[#121212]/50 after:to-[#121212] after:opacity-100 after:content-[''];
+  }
 }

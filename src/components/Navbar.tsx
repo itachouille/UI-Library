@@ -10,7 +10,7 @@ const Navbar = async () => {
   const user = '';
 
   return (
-    <nav className="sticky inset-x-0 top-0 z-[100] h-20 w-full border-b border-[#1D1D1D] bg-[#121212] px-8 transition-all">
+    <nav className="sticky inset-x-0 top-0 z-[100] h-20 w-full border-b border-[#1D1D1D] px-8 backdrop-blur-lg transition-all">
       <div className="flex-between h-full">
         <Link href="/" className="z-40 flex font-semibold">
           <Image src="/logo.svg" alt="Paste logo" width={96} height={32} />
