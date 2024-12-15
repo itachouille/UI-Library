@@ -24,8 +24,8 @@ const ICONS = [
 
 const MarqueeSection = () => {
   return (
-    <section className="relative py-28">
-      <div className="pointer-events-none relative mx-auto flex w-full flex-col gap-4 overflow-hidden">
+    <section className="relative py-32">
+      <div className="relative mx-auto flex w-full flex-col gap-4 overflow-hidden">
         <Marquee className="[--duration:20s]">
           {ICONS.map(({ Icon, gradient }, index) => (
             <div className="relative" key={index}>
@@ -76,24 +76,24 @@ const MarqueeSection = () => {
 
         <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#121212]/40 to-[#121212]" />
 
-        <div className="absolute z-10 w-full">
-          <div className="mx-auto size-24 rounded-[2rem] border bg-black/10 p-3 shadow-2xl backdrop-blur-md lg:size-32">
-            <HeartHandshakeIcon className="mx-auto size-16 lg:size-24" />
-            <div className="z-10 mt-4 flex flex-col items-center text-center text-primary">
-              <h2 className="text-3xl font-bold lg:text-4xl">
-                Stop wasting time on design.
-              </h2>
-              <p className="mt-2">
-                Start your 7-day free trial. No credit card required.
-              </p>
-              <a
-                className="group mt-4 inline-flex h-10 items-center justify-center whitespace-nowrap rounded-[2rem] border border-input bg-background px-6 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                href="#"
-              >
-                Get Started
-                <ChevronRight className="ml-1 size-4 transition-all duration-300 ease-out group-hover:translate-x-1" />
-              </a>
-            </div>
+        <div className="absolute z-40 flex size-full">
+          <div className="mx-auto my-16 flex flex-col items-center justify-around rounded-3xl border border-[#1D1D1D] bg-black/10 p-6 text-center backdrop-blur-md md:my-10 md:p-8">
+            <HeartHandshakeIcon className="size-20 text-white md:size-32" />
+            <h2 className="text-xl font-bold text-white md:text-2xl">
+              Concentrez-vous sur l'essentiel.
+            </h2>
+            <p className="mt-2 text-sm text-gray-300 md:text-base">
+              Laissez-nous gérer la conception.
+              <br />
+              Simplifiez votre workflow dès maintenant.
+            </p>
+            <a
+              className="group mt-4 flex w-fit cursor-pointer items-center justify-center gap-1 rounded-lg border border-white bg-white px-4 py-1 text-black transition"
+              href="#"
+            >
+              Lancez-vous
+              <ChevronRight className="size-5 transition-all group-hover:translate-x-1" />
+            </a>
           </div>
         </div>
       </div>

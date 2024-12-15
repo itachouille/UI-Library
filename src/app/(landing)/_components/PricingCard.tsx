@@ -39,7 +39,7 @@ const Card = ({ title, description, price, features }: CardProps) => {
       <div className="mx-auto flex flex-col gap-4 text-center">
         <h2 className="text-2xl font-semibold uppercase">{title}</h2>
         <p className="text-sm text-white">{description}</p>
-        <span className="text-4xl font-bold text-white">{price} €</span>
+        <span className="text-5xl font-bold text-white">{price} €</span>
       </div>
 
       <hr className="h-px w-full border-none bg-gradient-to-r from-orange-200/0 via-orange-400/60 to-orange-200/0" />

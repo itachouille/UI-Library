@@ -15,86 +15,78 @@ const Footer = () => {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-10">
             <div>
               <h2 className="mb-6 text-sm font-medium uppercase tracking-tighter text-white">
-                Product
+                Produit
               </h2>
               <ul className="grid gap-2">
                 <li>
-                  <a
-                    className="cursor-pointer text-sm font-[450] text-gray-400 duration-200 hover:text-gray-200"
-                    href="/"
-                  >
-                    Email Collection
-                  </a>
-                </li>
-                <li>
-                  <a
+                  <Link
                     className="cursor-pointer text-sm font-[450] text-gray-400 duration-200 hover:text-gray-200"
                     href="/pricing"
                   >
-                    Pricing
-                  </a>
+                    Tarifs
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="cursor-pointer text-sm font-[450] text-gray-400 duration-200 hover:text-gray-200"
                     href="/faq"
                   >
                     FAQ
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div>
               <h2 className="mb-6 text-sm font-medium uppercase tracking-tighter text-white">
-                Community
+                Communauté
               </h2>
               <ul className="grid gap-2">
                 <li>
-                  <a
+                  <Link
                     className="cursor-pointer text-sm font-[450] text-gray-400 duration-200 hover:text-gray-200"
                     href="/"
                   >
                     Discord
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="cursor-pointer text-sm font-[450] text-gray-400 duration-200 hover:text-gray-200"
                     href="/"
                   >
                     Twitter
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a
                     className="cursor-pointer text-sm font-[450] text-gray-400 duration-200 hover:text-gray-200"
                     href="mailto:hello@chatcollect.com"
                   >
-                    Email
+                    Nous écrire
                   </a>
                 </li>
               </ul>
             </div>
             <div>
               <h2 className="mb-6 text-sm font-medium uppercase tracking-tighter text-white">
-                Legal
+                Légal
               </h2>
               <ul className="grid gap-2">
                 <li>
-                  <a
+                  <Link
                     className="cursor-pointer text-sm font-[450] text-gray-400 duration-200 hover:text-gray-200"
                     href="/terms"
                   >
-                    Terms
-                  </a>
+                    Conditions générales
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="cursor-pointer text-sm font-[450] text-gray-400 duration-200 hover:text-gray-200"
                     href="/privacy"
                   >
-                    Privacy
-                  </a>
+                    Politique de confidentialité
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -102,7 +94,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-2 rounded-md border-neutral-700/20 px-8 py-4 sm:flex sm:flex-row sm:items-center sm:justify-between">
           <div className="flex space-x-5 sm:mt-0 sm:justify-center">
-            <a
+            <Link
               className="fill-gray-500 text-gray-500 hover:fill-gray-600 hover:text-gray-600"
               href=""
             >
@@ -122,8 +114,8 @@ const Footer = () => {
                 ></path>
               </svg>
               <span className="sr-only">Discord</span>
-            </a>
-            <a
+            </Link>
+            <Link
               className="fill-gray-500 text-gray-500 hover:fill-gray-600 hover:text-gray-600"
               href=""
             >
@@ -143,15 +135,15 @@ const Footer = () => {
                 ></path>
               </svg>
               <span className="sr-only">Twitter</span>
-            </a>
+            </Link>
           </div>
           <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
             Copyright © 2024
-            <a className="cursor-pointer" href="/">
+            <Link className="cursor-pointer" href="/">
               {' '}
               Paste
-            </a>
-            . All Rights Reserved.
+            </Link>
+            . Tous droits réservés.
           </span>
         </div>
       </div>
