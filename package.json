@@ -20,6 +20,7 @@
     "prisma:wipe": "npx prisma migrate reset --force && npx prisma db push"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.9.2",
     "@prisma/client": "^6.0.1",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.1",

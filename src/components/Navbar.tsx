@@ -1,13 +1,12 @@
 import Link from 'next/link';
-//import { SignOutButton } from '@clerk/nextjs';
+import { SignOutButton } from '@clerk/nextjs';
 import { ArrowRight, User } from 'lucide-react';
 import { Button, buttonVariants } from './ui/button';
 import Image from 'next/image';
-//import { currentUser } from '@clerk/nextjs/server';
+import { currentUser } from '@clerk/nextjs/server';
 
 const Navbar = async () => {
-  // const user = await currentUser();
-  const user = '';
+  const user = await currentUser();
 
   return (
     <nav className="sticky inset-x-0 top-0 z-[100] h-20 w-full border-b border-[#1D1D1D] px-8 backdrop-blur-lg transition-all">
@@ -19,41 +18,52 @@ const Navbar = async () => {
         <div className="flex h-full items-center space-x-4">
           {user ? (
             <>
-              {/*      <SignOutButton> */}
-              <Button size="sm" variant="ghost">
-                Sign out
-              </Button>
-              {/*     </SignOutButton> */}
+              <SignOutButton>
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  className="border border-[#1D1D1D]"
+                >
+                  Sign out
+                </Button>
+              </SignOutButton>
 
               <Link
                 href="/dashboard"
                 className={buttonVariants({
                   size: 'sm',
-                  className: 'flex items-center gap-1',
+                  variant: 'ghost',
+                  className: 'border border-[#1D1D1D]',
                 })}
               >
-                Dashboard <ArrowRight className="ml-1.5 size-4" />
+                Dashboard <ArrowRight className="size-4" />
               </Link>
             </>
           ) : (
             <>
-              {/*  <Link
+              <Link
                 href="/sign-in"
                 className={buttonVariants({
                   size: 'sm',
                   variant: 'ghost',
+                  className: 'border border-[#1D1D1D]',
                 })}
               >
                 Sign in
-              </Link> */}
+              </Link>
 
-              {/*  <div className="h-8 w-px bg-[#1D1D1D]" /> */}
+              <div className="h-8 w-px bg-[#1D1D1D]" />
 
               <Link
-                href="/sign-in"
-                className="flex items-center rounded-lg border border-[#1D1D1D] bg-[#121212] p-2 hover:bg-orange-700"
+                href="/sign-up"
+                className={buttonVariants({
+                  size: 'sm',
+                  variant: 'ghost',
+                  className: 'border border-[#1D1D1D]',
+                })}
               >
-                <User className="size-6 text-[#FFFFFF]" />
+                Sign up
+                <ArrowRight className="size-4" />
               </Link>
             </>
           )}

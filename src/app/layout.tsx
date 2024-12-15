@@ -3,6 +3,7 @@ import './globals.css';
 
 import type { Metadata } from 'next';
 import { Inter, EB_Garamond } from 'next/font/google';
+import { ClerkProvider } from '@clerk/nextjs';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const eb_garamond = EB_Garamond({
@@ -22,10 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn(inter.variable, eb_garamond.variable)}>
-      <body className="flex min-h-[calc(100vh-1px)] flex-col bg-[#121212] font-sans text-[#FFFFFF] antialiased">
-        <main className="relative flex flex-1 flex-col">{children}</main>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className={cn(inter.variable, eb_garamond.variable)}>
+        <body className="flex min-h-[calc(100vh-1px)] flex-col bg-[#121212] font-sans text-[#FFFFFF] antialiased">
+          <main className="relative flex flex-1 flex-col">{children}</main>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
