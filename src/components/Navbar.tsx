@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { SignOutButton } from '@clerk/nextjs';
+import { SignOutButton, UserButton } from '@clerk/nextjs';
 import { ArrowRight, User } from 'lucide-react';
 import { Button, buttonVariants } from './ui/button';
 import Image from 'next/image';
@@ -18,7 +18,7 @@ const Navbar = async () => {
         <div className="flex h-full items-center space-x-4">
           {user ? (
             <>
-              <SignOutButton>
+              {/* <SignOutButton>
                 <Button
                   size="sm"
                   variant="ghost"
@@ -37,7 +37,8 @@ const Navbar = async () => {
                 })}
               >
                 Dashboard <ArrowRight className="size-4" />
-              </Link>
+              </Link> */}
+              <UserButton />
             </>
           ) : (
             <>
