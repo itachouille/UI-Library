@@ -4,7 +4,7 @@ import { SignUp } from '@clerk/nextjs';
 const SignUpPage = () => {
   return (
     <div className="flex-center w-full flex-1">
-      <SignUp fallbackRedirectUrl="/welcome" forceRedirectUrl="/welcome" />
+      <SignUp />
     </div>
   );
 };

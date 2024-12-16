@@ -9,7 +9,7 @@ const Page = () => {
 
   return (
     <div className="flex-center w-full flex-1">
-      <SignIn forceRedirectUrl="/dashboard" />
+      <SignIn />
     </div>
   );
 };

@@ -6,6 +6,8 @@ import Particles from '@/components/ui/particles';
 import ArcEffect from './_components/ArcEffect';
 import Pricing from './_components/Pricing';
 import MarqueeSection from './_components/MarqueeSection';
+import HeroImage from '@/assets/hero.webp';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -31,8 +33,8 @@ export default function Home() {
 
           <div className="blur-orange-effect-outside relative mt-[7rem]">
             <div className="image-gradient-effect relative overflow-hidden rounded-xl">
-              <img
-                src="/hero.webp"
+              <Image
+                src={HeroImage}
                 alt="dashboard image"
                 className="relative h-full w-full rounded-[inherit] border border-[#1D1D1D] object-cover"
               />
