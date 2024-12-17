@@ -8,8 +8,8 @@ import { currentUser } from '@clerk/nextjs/server';
 const Navbar = async () => {
   const user = await currentUser();
   return (
-    <header className="container sticky inset-x-0 top-0 z-[100] mx-auto h-16 border-b border-[#1D1D1D] px-8 backdrop-blur-lg transition-all">
-      <nav className="flex-between h-full">
+    <header className="sticky inset-x-0 top-0 z-[100] h-16 w-full border-b border-[#1D1D1D] px-8 backdrop-blur-lg transition-all">
+      <nav className="flex-between container mx-auto h-full">
         <Link href="/" className="z-40 flex font-semibold">
           <Image src="/logo.svg" alt="Paste logo" width={96} height={32} />
         </Link>

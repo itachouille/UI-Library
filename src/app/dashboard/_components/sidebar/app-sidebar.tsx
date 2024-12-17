@@ -122,7 +122,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar {...props} className="top-16">
+    <Sidebar {...props} className="top-16 border-[#1D1D1D]">
       <SidebarContent className="bg-[#121212]">
         <NavMain items={data.navMain} />
       </SidebarContent>

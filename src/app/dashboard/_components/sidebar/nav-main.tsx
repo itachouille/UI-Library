@@ -13,7 +13,6 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from '@/components/ui/sidebar';
-import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
 
 export default function NavMain({
@@ -28,12 +27,13 @@ export default function NavMain({
       title: string;
       icon?: string;
       url: string;
+      isActive?: boolean; // Ajout pour les sous-items actifs
     }[];
   }[];
 }) {
   return (
     <SidebarGroup>
-      <SidebarMenu>
+      <SidebarMenu className="text-[#7E7F81]">
         {items.map(item => (
           <Collapsible
             key={item.title}
@@ -42,8 +42,9 @@ export default function NavMain({
             className="group/collapsible"
           >
             <SidebarMenuItem>
+              {/* Menu principal */}
               <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title} className="bg-white">
+                <SidebarMenuButton tooltip={item.title} className="">
                   {item.icon && (
                     <Image
                       src={item.icon}
@@ -53,15 +54,25 @@ export default function NavMain({
                     />
                   )}
                   <span>{item.title}</span>
-                  <ChevronDown className="text-primaryGray ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180" />
+                  <ChevronDown className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180" />
                 </SidebarMenuButton>
               </CollapsibleTrigger>
+
+              {/* Sous-items uniquement */}
               <CollapsibleContent>
-                <SidebarMenuSub className="border-cardStroke">
+                <SidebarMenuSub className="border-[#1D1D1D] py-4">
                   {item.items?.map(subItem => (
                     <SidebarMenuSubItem key={subItem.title}>
-                      <SidebarMenuSubButton asChild>
-                        <a href={subItem.url}>
+                      <SidebarMenuSubButton
+                        className={`flex items-center ${
+                          subItem.isActive ? 'text-white' : 'text-[#7E7F81]'
+                        }`}
+                        asChild
+                      >
+                        <a href={subItem.url} className="flex items-center">
+                          {subItem.isActive && (
+                            <div className="mr-2 size-2 rounded-full bg-gradient-to-t from-[#FF2900] to-[#FF7A00]" />
+                          )}
                           {subItem.icon && (
                             <Image
                               src={subItem.icon}
@@ -77,7 +88,6 @@ export default function NavMain({
                   ))}
                 </SidebarMenuSub>
               </CollapsibleContent>
-              <Separator className="bg-cardStroke" />
             </SidebarMenuItem>
           </Collapsible>
         ))}
