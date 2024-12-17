@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import { CheckIcon } from 'lucide-react';
 
 const FREE = {
@@ -52,10 +51,6 @@ const Card = ({ title, description, price, features }: CardProps) => {
           </li>
         ))}
       </ul>
-
-      <Button variant="outline" className="text-black">
-        Choisir
-      </Button>
     </div>
   );
 };

@@ -1,16 +1,15 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { UserButton } from '@clerk/nextjs';
 import { ArrowRight } from 'lucide-react';
 import { buttonVariants } from './ui/button';
-import Image from 'next/image';
 import { currentUser } from '@clerk/nextjs/server';
 
 const Navbar = async () => {
   const user = await currentUser();
-
   return (
-    <nav className="sticky inset-x-0 top-0 z-[100] h-20 w-full border-b border-[#1D1D1D] px-8 backdrop-blur-lg transition-all">
-      <div className="flex-between h-full">
+    <header className="container sticky inset-x-0 top-0 z-[100] mx-auto h-16 border-b border-[#1D1D1D] px-8 backdrop-blur-lg transition-all">
+      <nav className="flex-between h-full">
         <Link href="/" className="z-40 flex font-semibold">
           <Image src="/logo.svg" alt="Paste logo" width={96} height={32} />
         </Link>
@@ -62,8 +61,8 @@ const Navbar = async () => {
             </>
           )}
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

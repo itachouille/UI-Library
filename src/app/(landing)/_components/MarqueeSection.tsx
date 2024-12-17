@@ -1,7 +1,8 @@
+import { buttonVariants } from '@/components/ui/button';
 import Marquee from '@/components/ui/marquee';
 import {
+  ArrowRight,
   BarChart,
-  ChevronRight,
   File,
   Globe,
   HeartHandshake,
@@ -9,6 +10,7 @@ import {
   Rss,
   Shield,
 } from 'lucide-react';
+import Link from 'next/link';
 
 const ICONS = [
   { Icon: Shield, gradient: 'from-yellow-400 via-orange-500 to-yellow-600' },
@@ -78,7 +80,7 @@ const MarqueeSection = () => {
 
         <div className="absolute z-40 flex size-full">
           <div className="mx-auto my-16 flex flex-col items-center justify-around rounded-3xl border border-[#1D1D1D] bg-black/10 p-6 text-center backdrop-blur-md md:my-10 md:p-8">
-            <HeartHandshakeIcon className="size-20 text-white md:size-32" />
+            <HeartHandshakeIcon className="size-20 text-white md:size-28" />
             <h2 className="text-xl font-bold text-white md:text-2xl">
               Concentrez-vous sur l'essentiel.
             </h2>
@@ -87,13 +89,17 @@ const MarqueeSection = () => {
               <br />
               Simplifiez votre workflow dès maintenant.
             </p>
-            <a
-              className="group mt-4 flex w-fit cursor-pointer items-center justify-center gap-1 rounded-lg border border-white bg-white px-4 py-1 text-black transition"
-              href="#"
+            <Link
+              href="/sign-up"
+              className={buttonVariants({
+                size: 'lg',
+                variant: 'secondary',
+                className: 'group mt-4',
+              })}
             >
-              Lancez-vous
-              <ChevronRight className="size-5 transition-all group-hover:translate-x-1" />
-            </a>
+              <span> Lancez-vous</span>
+              <ArrowRight className="transition-all group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
       </div>
