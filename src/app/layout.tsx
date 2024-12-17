@@ -4,6 +4,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, EB_Garamond } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
+import Navbar from '@/components/Navbar';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const eb_garamond = EB_Garamond({

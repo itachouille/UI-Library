@@ -14,7 +14,7 @@ import {
   SidebarMenuSubItem,
 } from '@/components/ui/sidebar';
 import { Separator } from '@/components/ui/separator';
-import SvgIcon from '@/components/svg-icon';
+import Image from 'next/image';
 
 export default function NavMain({
   items,
@@ -43,8 +43,15 @@ export default function NavMain({
           >
             <SidebarMenuItem>
               <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title} className="h-5">
-                  {item.icon && <SvgIcon src={item.icon} alt={item.title} />}
+                <SidebarMenuButton tooltip={item.title} className="bg-white">
+                  {item.icon && (
+                    <Image
+                      src={item.icon}
+                      alt={item.title}
+                      width={25}
+                      height={25}
+                    />
+                  )}
                   <span>{item.title}</span>
                   <ChevronDown className="text-primaryGray ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180" />
                 </SidebarMenuButton>
@@ -56,7 +63,12 @@ export default function NavMain({
                       <SidebarMenuSubButton asChild>
                         <a href={subItem.url}>
                           {subItem.icon && (
-                            <img src={subItem.icon} alt={subItem.title} />
+                            <Image
+                              src={subItem.icon}
+                              alt={subItem.title}
+                              width={25}
+                              height={25}
+                            />
                           )}
                           <span>{subItem.title}</span>
                         </a>

@@ -1,27 +1,29 @@
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarProvider,
-  SidebarRail,
-} from '@/components/ui/sidebar';
+import { Sidebar, SidebarContent, SidebarRail } from '@/components/ui/sidebar';
 import NavMain from './nav-main';
+import Bolt from '@/assets/icons/bolt.svg';
+import Figma from '@/assets/icons/figma.svg';
+import Webflow from '@/assets/icons/webflow.svg';
+import Grid from '@/assets/icons/grid.svg';
+import Star from '@/assets/icons/star.svg';
+import Stars from '@/assets/icons/stars.svg';
+import Bookmark from '@/assets/icons/bookmark.svg';
 
 const data = {
   navMain: [
     {
       title: 'PLATFORM',
       url: '#',
-      icon: '/icons/bolt.svg',
+      icon: Bolt,
       isActive: true,
       items: [
         {
           title: 'Webflow',
-          icon: '/icons/webflow.svg',
+          icon: Webflow,
           url: '#',
         },
         {
           title: 'Figma',
-          icon: '/icons/figma.svg',
+          icon: Figma,
           url: '#',
         },
       ],
@@ -29,7 +31,7 @@ const data = {
     {
       title: 'SECTIONS',
       url: '#',
-      icon: '/icons/grid.svg',
+      icon: Grid,
       isActive: true,
       items: [
         {
@@ -69,7 +71,7 @@ const data = {
     {
       title: 'STYLE',
       url: '#',
-      icon: '/icons/stars.svg',
+      icon: Stars,
       items: [
         {
           title: 'Style 1',
@@ -88,7 +90,7 @@ const data = {
     {
       title: 'SAVED',
       url: '#',
-      icon: '/icons/bookmark.svg',
+      icon: Bookmark,
       items: [
         {
           title: 'Draft 1',
@@ -103,7 +105,7 @@ const data = {
     {
       title: 'PLAN',
       url: '#',
-      icon: '/icons/star.svg',
+      icon: Star,
       items: [
         {
           title: 'FREE',
@@ -120,13 +122,11 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <SidebarProvider>
-      <Sidebar {...props} className="top-20">
-        <SidebarContent className="bg-mainBlack text-primaryGray border-cardStroke border-r">
-          <NavMain items={data.navMain} />
-        </SidebarContent>
-        <SidebarRail />
-      </Sidebar>
-    </SidebarProvider>
+    <Sidebar {...props} className="top-16">
+      <SidebarContent className="bg-[#121212]">
+        <NavMain items={data.navMain} />
+      </SidebarContent>
+      <SidebarRail />
+    </Sidebar>
   );
 }

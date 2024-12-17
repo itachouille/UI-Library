@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const Hero = () => {
   return (
-    <section className="relative mx-auto mt-16 max-w-[80rem] px-6 text-center md:px-8 lg:mt-28">
+    <section className="relative mx-auto mt-16 max-w-screen-xl px-6 text-center md:px-8 lg:mt-28">
       <div className="relative mx-auto flex flex-col items-center">
         <h1 className="text-balance bg-gradient-to-br from-white from-30% to-white/40 bg-clip-text pb-6 text-5xl font-medium leading-none tracking-tighter text-transparent dark:from-white dark:to-white/40 sm:text-6xl md:text-7xl lg:text-8xl">
           Créez des interfaces
