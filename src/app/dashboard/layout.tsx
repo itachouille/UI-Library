@@ -1,22 +1,23 @@
-import Navbar from '@/components/Navbar';
 import { ReactNode } from 'react';
-import { AppSidebar } from './_components/sidebar/app-sidebar';
-import { SidebarProvider } from '@/components/ui/sidebar';
+import Navbar from '@/components/Navbar';
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from '@/components/ui/sidebar';
+import { AppSidebar } from './_components/Sidebar';
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="flex h-screen flex-col">
-      <div className="h-16">
-        <Navbar />
-      </div>
-
-      <div className="flex h-[calc(100vh-4rem)] flex-1 overflow-hidden">
-        <SidebarProvider className="h-full">
-          <AppSidebar />
-        </SidebarProvider>
-
-        <div className="flex-1 overflow-auto">{children}</div>
-      </div>
+    <div className="h-screen overflow-hidden">
+      <Navbar />
+      <SidebarProvider>
+        <AppSidebar />
+        <div className="flex items-start justify-center p-2">
+          <SidebarTrigger className="text-[#7E7F81]" />
+        </div>
+        <SidebarInset>{children}</SidebarInset>
+      </SidebarProvider>
     </div>
   );
 };

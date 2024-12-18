@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <section className="relative mx-auto mt-16 max-w-screen-xl px-6 text-center md:px-8 lg:mt-28">
       <div className="relative mx-auto flex flex-col items-center">
-        <h1 className="text-balance bg-gradient-to-br from-white from-30% to-white/40 bg-clip-text pb-6 text-5xl font-medium leading-none tracking-tighter text-transparent dark:from-white dark:to-white/40 sm:text-6xl md:text-7xl lg:text-8xl">
+        <h1 className="text-balance bg-gradient-to-br from-white to-white/40 bg-clip-text pb-6 text-5xl font-medium leading-none tracking-tighter text-transparent sm:text-6xl md:text-7xl lg:text-8xl">
           Créez des interfaces
           <br className="hidden md:block" /> utilisateur exceptionnelles
         </h1>
@@ -41,7 +41,7 @@ const Hero = () => {
               alt="dashboard image"
               className="relative h-full w-full rounded-[inherit] border border-[#1D1D1D] object-cover"
             />
-            <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#121212]/40 to-[#121212]" />
+            <div className="absolute inset-0 z-50 bg-gradient-to-b from-transparent via-[#0B0B0B]/40 to-[#0B0B0B]" />
             <BorderBeam duration={15} colorFrom="#FF2900" colorTo="#FF7A00" />
           </div>
         </div>
