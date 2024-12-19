@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Webflow from '../../assets/icons/webflow.svg';
 import Figma from '../../assets/icons/figma.svg';
 import { Eye } from 'lucide-react';
+import CardsList from './_components/CardsList';
 
 const page = async () => {
   const auth = await currentUser();
@@ -13,11 +14,11 @@ const page = async () => {
 
   return (
     <main className="flex h-full flex-col bg-[#111111] p-8">
-      <div className="flex h-96 w-full justify-between">
-        <div className="flex w-1/2 max-w-xl flex-col justify-between">
+      <div className="flex w-full flex-col justify-around gap-12 lg:h-96 lg:flex-row">
+        <div className="flex max-w-2xl flex-col justify-between lg:w-1/2">
           <div>
             <h2 className="text-2xl font-medium text-[#FFFFFF]">
-              Hero Section
+              Hero Section <span>Pro</span>
             </h2>
             <p className="mt-6 text-[#7E7F81]">
               Detailed header section with heading and graphic/image centred and
@@ -25,8 +26,8 @@ const page = async () => {
             </p>
           </div>
           <div className="mt-8 flex flex-col gap-6">
-            <div className="flex gap-6">
-              <button className="flex w-1/2 items-center justify-center gap-2 rounded-md border border-[#292929] bg-[#1B1B1B] py-2 hover:bg-gray-400">
+            <div className="flex flex-col gap-6 sm:flex-row">
+              <button className="flex items-center justify-center gap-2 rounded-md border border-[#292929] bg-[#1B1B1B] py-2 hover:bg-gray-400 sm:w-1/2">
                 <Image
                   src={Webflow}
                   width={20}
@@ -35,7 +36,7 @@ const page = async () => {
                 />
                 <span>Copy to Webflow</span>
               </button>
-              <button className="flex w-1/2 items-center justify-center gap-2 rounded-md border border-[#292929] bg-[#1B1B1B] py-2 hover:bg-gray-400">
+              <button className="flex items-center justify-center gap-2 rounded-md border border-[#292929] bg-[#1B1B1B] py-2 hover:bg-gray-400 sm:w-1/2">
                 <Image src={Figma} width={20} height={20} alt="figma icon" />
                 <span>Copy to Figma</span>
               </button>
@@ -46,12 +47,19 @@ const page = async () => {
             </button>
           </div>
         </div>
-        <div className="w-1/2 max-w-xl rounded-xl border border-[#292929] bg-[#1B1B1B]" />
+        <div className="aspect-[4/3] w-full max-w-2xl rounded-xl border border-[#292929] bg-[#1B1B1B]" />
       </div>
-      <Separator className="my-10" />
-      <div>
-        <h2>Other sections you might like</h2>
+      <Separator className="my-10 bg-[#1B1B1B]" />
+      <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-medium text-[#FFFFFF]">
+          Other sections you might like
+        </h2>
+        <button className="rounded-md border border-[#292929] bg-[#1B1B1B] p-2 text-[#7E7F81]">
+          Browse All
+        </button>
       </div>
+
+      <CardsList />
     </main>
   );
 };

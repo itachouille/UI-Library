@@ -5,19 +5,24 @@ import Grid from '@/assets/icons/grid.svg';
 import Star from '@/assets/icons/star.svg';
 import Stars from '@/assets/icons/stars.svg';
 import Bookmark from '@/assets/icons/bookmark.svg';
-import { LucideIcon } from 'lucide-react';
 
-interface SidebarItem {
+export interface SidebarItem {
   href: string;
-  icon?: LucideIcon;
+  icon?: string;
   text: string;
 }
 
-interface SidebarCategory {
+export interface SidebarCategory {
   category: string;
   isActive?: boolean;
-  icon: LucideIcon;
+  icon?: string;
   items: SidebarItem[];
+}
+
+export interface CarditemProps {
+  title: string;
+  date: string;
+  marked?: boolean;
 }
 
 export const SIDEBAR_ITEMS: SidebarCategory[] = [
@@ -123,4 +128,13 @@ export const SIDEBAR_ITEMS: SidebarCategory[] = [
       },
     ],
   },
+];
+
+export const CARD_DATA: CarditemProps[] = [
+  { title: 'HERO SECTION', date: '28th of Feb 2024', marked: true },
+  { title: 'HERO SECTION', date: '15th of Mar 2024' },
+  { title: 'FOOTER SECTION', date: '10th of Apr 2024' },
+  { title: 'PRICING SECTION', date: '5th of May 2024' },
+  { title: 'CONTACT SECTION', date: '25th of May 2024' },
+  { title: 'ABOUT SECTION', date: '15th of Jun 2024' },
 ];

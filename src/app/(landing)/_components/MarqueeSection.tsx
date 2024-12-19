@@ -72,11 +72,11 @@ const MarqueeSection = () => {
           ))}
         </Marquee>
 
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#121212]" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#0B0B0B]" />
 
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#121212]" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#0B0B0B]" />
 
-        <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#121212]/40 to-[#121212]" />
+        <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#0B0B0B]/40 to-[#0B0B0B]" />
 
         <div className="absolute z-40 flex size-full">
           <div className="mx-auto my-16 flex flex-col items-center justify-around rounded-3xl border border-[#1D1D1D] bg-black/10 p-6 text-center backdrop-blur-md md:my-10 md:p-8">
