@@ -1,36 +1,6 @@
+import { FREE, PREMIUM } from '@/constants';
+import { CardProps } from '@/types';
 import { CheckIcon } from 'lucide-react';
-
-const FREE = {
-  title: 'free',
-  description: 'Un plan gratuit pour les développeurs et petites entreprises',
-  price: 0,
-  features: [
-    'Accès à 20 composants UI de base',
-    'Personnalisation avec CSS standard',
-    'Documentation complète',
-    'Mises à jour régulières',
-  ],
-};
-
-const PREMIUM = {
-  title: 'premium',
-  description: 'Un plan pour les entreprises avec des besoins spécifiques',
-  price: 99,
-  features: [
-    'Tout du plan Free',
-    'Composants UI illimités',
-    'Support technique prioritaire 24/7',
-    'Personnalisation complète via une API dédiée',
-    'Intégration avec les outils d’entreprise (Figma, Webflow, etc.)',
-  ],
-};
-
-interface CardProps {
-  title: string;
-  description: string;
-  price: number;
-  features: string[];
-}
 
 const Card = ({ title, description, price, features }: CardProps) => {
   return (

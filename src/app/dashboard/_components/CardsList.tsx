@@ -4,7 +4,7 @@ import { Bookmark } from 'lucide-react';
 
 const CardsList = () => {
   return (
-    <div className="mt-10 grid auto-rows-min gap-8 md:grid-cols-3">
+    <div className="mt-10 grid auto-rows-min gap-8 lg:grid-cols-3">
       {CARD_DATA.map((card, i) => (
         <Card
           key={i}

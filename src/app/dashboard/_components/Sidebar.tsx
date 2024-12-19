@@ -17,6 +17,7 @@ import {
 import { ChevronDown } from 'lucide-react';
 import { SIDEBAR_ITEMS } from '@/constants';
 import Image from 'next/image';
+import { Icon } from 'lucide-react';
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -24,12 +25,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent className="bg-[#0B0B0B]">
         <SidebarGroup>
           <SidebarMenu className="flex text-[#7E7F81]">
-            {SIDEBAR_ITEMS.map(({ category, icon, items }) => (
+            {SIDEBAR_ITEMS.map(({ category, icon: Icon, items }) => (
               <Collapsible key={category} className="group/collapsible">
                 <SidebarMenuItem>
                   <CollapsibleTrigger asChild>
                     <SidebarMenuButton>
-                      {icon && <Image src={icon} alt="category icon" />}
+                      {Icon && <Icon />}
                       <span>{category}</span>
                       <ChevronDown className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180" />
                     </SidebarMenuButton>
