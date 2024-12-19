@@ -1,5 +1,6 @@
-import { CARD_DATA, CarditemProps } from '@/constants';
+import { CARD_DATA } from '@/constants';
 import { cn } from '@/lib/utils';
+import { CarditemProps } from '@/types';
 import { Bookmark } from 'lucide-react';
 
 const CardsList = () => {

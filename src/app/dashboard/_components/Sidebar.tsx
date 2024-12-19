@@ -17,7 +17,11 @@ import {
 import { ChevronDown } from 'lucide-react';
 import { SIDEBAR_ITEMS } from '@/constants';
 import Image from 'next/image';
-import { Icon } from 'lucide-react';
+import { buttonVariants } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import Link from 'next/link';
+import RightSVG from '@/assets/upgradeBtnRight.svg';
+import LeftSVG from '@/assets/upgradeBtnLeft.svg';
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -66,9 +70,36 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                       ))}
                     </SidebarMenuSub>
                   </CollapsibleContent>
+                  <Separator
+                    className="mx-auto my-2 w-[85%] bg-[#1D1D1D]"
+                    decorative
+                  />
                 </SidebarMenuItem>
               </Collapsible>
             ))}
+            <Link
+              href="/dasboard/upgrade"
+              className="flex items-center justify-center overflow-hidden rounded-lg border border-[#292929] bg-[#1B1B1B] py-2 font-medium text-[#FAFAFA] hover:opacity-75"
+            >
+              <Image
+                src={LeftSVG}
+                width={50}
+                height={20}
+                alt="btn decoration"
+                className="-translate-x-6"
+              />
+              Upgrade to
+              <span className="ml-1.5 bg-gradient-to-t from-[#FF2900] to-[#FF7A00] bg-clip-text text-transparent">
+                Pro
+              </span>
+              <Image
+                src={RightSVG}
+                width={50}
+                height={20}
+                alt="btn decoration"
+                className="translate-x-6"
+              />
+            </Link>
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>

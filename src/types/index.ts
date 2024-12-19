@@ -1,5 +1,22 @@
 import { LucideIcon } from 'lucide-react';
 
+export interface FooterLink {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
+export interface FooterSection {
+  title: string;
+  items: FooterLink[];
+}
+
+export interface SocialLink {
+  label: string;
+  href: string;
+  svg: React.ReactNode;
+}
+
 export interface SidebarItem {
   href: string;
   icon?: string;
