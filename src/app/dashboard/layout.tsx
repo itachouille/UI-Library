@@ -13,7 +13,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <Navbar />
       <SidebarProvider>
         <AppSidebar />
-        <div className="border-r border-[#1D1D1D] pr-1 pt-2.5 text-[#7E7F81]">
+        <div className="mx-2 h-fit pt-2.5 text-[#7E7F81]">
           <SidebarTrigger />
         </div>
         <SidebarInset>{children}</SidebarInset>

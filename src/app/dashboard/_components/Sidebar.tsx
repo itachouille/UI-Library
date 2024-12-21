@@ -8,6 +8,7 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
+  SidebarSeparator,
 } from '@/components/ui/sidebar';
 import {
   Collapsible,
@@ -17,16 +18,12 @@ import {
 import { ChevronDown } from 'lucide-react';
 import { SIDEBAR_ITEMS } from '@/constants';
 import Image from 'next/image';
-import { buttonVariants } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import Link from 'next/link';
-import RightSVG from '@/assets/upgradeBtnRight.svg';
-import LeftSVG from '@/assets/upgradeBtnLeft.svg';
+import UpgradeButton from './UpgradeButton';
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props} className="top-16 border-none">
-      <SidebarContent className="bg-[#0B0B0B]">
+      <SidebarContent className="border-none bg-[#0B0B0B]">
         <SidebarGroup>
           <SidebarMenu className="flex text-[#7E7F81]">
             {SIDEBAR_ITEMS.map(({ category, icon: Icon, items }) => (
@@ -70,37 +67,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                       ))}
                     </SidebarMenuSub>
                   </CollapsibleContent>
-                  <Separator
-                    className="mx-auto my-2 w-[85%] bg-[#1D1D1D]"
-                    decorative
-                  />
+                  <SidebarSeparator className="mx-4 bg-[#1D1D1D]" />
                 </SidebarMenuItem>
               </Collapsible>
             ))}
-            <Link
-              href="/dasboard/upgrade"
-              className="flex items-center justify-center overflow-hidden rounded-lg border border-[#292929] bg-[#1B1B1B] py-2 font-medium text-[#FAFAFA] hover:opacity-75"
-            >
-              <Image
-                src={LeftSVG}
-                width={50}
-                height={20}
-                alt="btn decoration"
-                className="-translate-x-6"
-              />
-              Upgrade to
-              <span className="ml-1.5 bg-gradient-to-t from-[#FF2900] to-[#FF7A00] bg-clip-text text-transparent">
-                Pro
-              </span>
-              <Image
-                src={RightSVG}
-                width={50}
-                height={20}
-                alt="btn decoration"
-                className="translate-x-6"
-              />
-            </Link>
           </SidebarMenu>
+          <UpgradeButton href="/dashboard/upgrade" className="mt-4" />
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>

@@ -4,6 +4,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, EB_Garamond } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
+import { Providers } from '@/components/Providers';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const eb_garamond = EB_Garamond({
@@ -26,7 +27,9 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" className={cn(inter.variable, eb_garamond.variable)}>
         <body className="flex min-h-[calc(100vh-1px)] flex-col bg-[#0B0B0B] font-sans text-[#FFFFFF] antialiased">
-          <main className="relative flex flex-1 flex-col">{children}</main>
+          <main className="relative flex flex-1 flex-col">
+            <Providers>{children}</Providers>
+          </main>
         </body>
       </html>
     </ClerkProvider>

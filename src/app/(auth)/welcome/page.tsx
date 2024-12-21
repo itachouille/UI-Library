@@ -1,16 +1,16 @@
 'use client';
 
 import { LoadingSpinner } from '@/components/LoadingSpinner';
-//import { client } from '@/lib/client';
 //import { useQuery } from '@tanstack/react-query';
+//import { client } from "@/lib/client"
 import { LucideProps } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 //import { useEffect } from 'react';
 
 const WelcomePage = () => {
   const router = useRouter();
-
-  /*   const { data } = useQuery({
+  /* 
+    const { data } = useQuery({
     queryFn: async () => {
       const res = await client.auth.getDatabaseSyncStatus.$get();
       return await res.json();
